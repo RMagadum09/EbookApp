@@ -1,24 +1,14 @@
-<%@page import="com.entity.BookOrder"%>
-<%@page import="java.util.List"%>
-<%@page import="com.DB.DBConnect"%>
-<%@page import="com.DAO.BookOrderDaoImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin: All Orders</title>
+<title>Admin: All Ordera</title>
 <%@include file="allCss.jsp"%>
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
-	<c:if test="${empty userobj }">
-    <c:redirect url="../login.jsp"></c:redirect>
-    </c:if>
-	
 	<h3 class="text-center">Hello Admin</h3>
 
 
@@ -37,25 +27,41 @@
 			</tr>
 		</thead>
 		<tbody>
-			<%
-			BookOrderDaoImpl dao = new BookOrderDaoImpl(DBConnect.getCon());
-			List<BookOrder> list = dao.getAllBook();
-			for(BookOrder b: list){%>
 			<tr>
-				<th scope="row"><%=b.getOrderId() %></th>
-				<td><%=b.getUserName() %></td>
-				<td><%=b.getEmail() %> </td>
-				<td><%=b.getFullAddress() %></td>
-				<td><%=b.getPhoneNumber() %></td>
-				<td><%=b.getBookName() %></td>
-				<td><%=b.getAuthor() %></td>
-				<td><%=b.getPrice() %></td>
-				<td><%= b.getPaymentMode()%></td>
+				<th scope="row">1</th>
+				<td>Mark</td>
+				<td>Otto</td>
+				<td>@mdo</td>
+				<td>Otto</td>
+				<td>@mdo</td>
+				<td>@mdo</td>
+				<td>Otto</td>
+				<td>@mdo</td>
+
 			</tr>
-			
-			<%}
-			%>
-			
+			<tr>
+				<th scope="row">2</th>
+				<td>Jacob</td>
+				<td>Thornton</td>
+				<td>@fat</td>
+				<td>Thornton</td>
+				<td>@fat</td>
+				<td>@mdo</td>
+				<td>Otto</td>
+				<td>@mdo</td>
+
+			</tr>
+			<tr>
+				<th scope="row">3</th>
+				<td>Larry</td>
+				<td>the Bird</td>
+				<td>@twitter</td>
+				<td>the Bird</td>
+				<td>@twitter</td>
+				<td>@mdo</td>
+				<td>Otto</td>
+				<td>@mdo</td>
+			</tr>
 		</tbody>
 	</table>
 	<div style="margin-top: 130px">

@@ -35,7 +35,8 @@
 						<p class="text-center text-danger">${ failedMessage}</p>
 						<c:remove var="failedMessage" scope="session"/>
 						</c:if>
-												
+						
+						
 						<!-- Here we call the Books add Servlet and we mentioned enctype which will help us add binary data too -->
 						<form action="../addbooks" method="post"
 							enctype="multipart/form-data">
@@ -77,7 +78,16 @@
 							<button type="submit" class="btn btn-primary">Add</button>
 					</div>
 
+
+
+
+
 					</form>
+
+
+
+
+
 
 				</div>
 			</div>
