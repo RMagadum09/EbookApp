@@ -27,7 +27,7 @@ public class BooksAdd extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String bookName = req.getParameter("bookname");
 		String author = req.getParameter("authorname");
-		Double price = Double.parseDouble(req.getParameter("price"));
+		String price =req.getParameter("price");
 		String categories = req.getParameter("booktype");
 		String status = req.getParameter("bookStatus");
 		Part part = req.getPart("bookimg");
@@ -36,8 +36,6 @@ public class BooksAdd extends HttpServlet {
 		BookDetails b = new BookDetails(0, bookName, author, price, categories, status, fileName,"admin");
 		
 		BookDaoImpl dao = new BookDaoImpl(DBConnect.getCon());
-		
-
 		
 		boolean f = dao.addBooks(b);
 		
@@ -49,7 +47,6 @@ public class BooksAdd extends HttpServlet {
 			File file = new File(path);
 			part.write(path+File.separator +fileName);
 			
-			
 			session.setAttribute("successMessage", "Book Add Successfully");
 			resp.sendRedirect("admin/addbooks.jsp");			
 		}
@@ -58,8 +55,6 @@ public class BooksAdd extends HttpServlet {
 			resp.sendRedirect("admin/addbooks.jsp");
 
 		}
-		
-		
 		
 	}
 

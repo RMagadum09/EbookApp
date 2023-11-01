@@ -22,8 +22,9 @@
 			<c:if test="${not empty userobj }">
 				<a  class="btn btn-success text-white"> <i
 					class="fa-solid fa-user"></i>${userobj.name }
+					
 				</a>
-				<a data-toggle="modal" data-target="#exampleModalCenter"
+				<a href="index.jsp" data-toggle="modal" data-target="#exampleModalCenter"
 					class="btn btn-primary btn text-white"><i
 					class="fa-solid fa-right-to-bracket"></i>Logout</a>
 			</c:if>

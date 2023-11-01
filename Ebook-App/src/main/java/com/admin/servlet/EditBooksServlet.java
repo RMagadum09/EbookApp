@@ -21,7 +21,7 @@ public class EditBooksServlet extends HttpServlet {
 			int id = Integer.parseInt(req.getParameter("id"));
 			String bookName = req.getParameter("bookname");
 			String author = req.getParameter("authorname");
-			Double price = Double.parseDouble(req.getParameter("price"));
+			String price = req.getParameter("price");
 			String status = req.getParameter("bookStatus");
 			
 			BookDetails b = new BookDetails();
