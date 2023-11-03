@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Admin: All Ordera</title>
+<title>Admin: All Order</title>
 <%@include file="allCss.jsp"%>
 </head>
 <body>

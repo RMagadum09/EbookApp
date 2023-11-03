@@ -61,7 +61,7 @@
 							if (u == null) {
 							%>
 
-							<a href="login.jsp" class="btn btn-danger btn-sm ">Add to
+							<a href="login.jsp" class="btn btn-danger btn-sm ml-5">Add to
 								Cart</a>
 
 							<%

@@ -24,7 +24,6 @@
 	User u = (User) session.getAttribute("userobj");
 	%>
 
-
 	<div class="container-fluid">
 		<div class="row p-3">
 
@@ -71,16 +70,12 @@
 
 							<a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"
 								class="btn btn-danger btn-sm ">Add to Cart</a>
-
 							<%
 							}
 							%>
 						
-						
-						
-						
 							 <a
-								href="" class="btn btn-success btn-sm ">View Details</a> <a
+								href="viewDetails.jsp?bid=<%=b.getBookId() %>" class="btn btn-success btn-sm ">View Details</a> <a
 								href="" class="btn btn-danger btn-sm "><%=b.getPrice()%></a>
 
 						</div>
@@ -91,7 +86,6 @@
 					</div>
 				</div>
 			</div>
-
 
 			<%
 			}

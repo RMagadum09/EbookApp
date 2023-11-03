@@ -71,8 +71,78 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return us;
 	}
-	
-	
+	public boolean checkPassword(int id, String pass) {
+		boolean f = false;
+		try {
+			String sql = "SELECT * FROM `user` WHERE `id`=? and `password`=? ";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			ps.setString(2, pass);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				f=true;
+				
+			}
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		return f;
+	}
+	public boolean updateProfile(User us) {
+		String sql = "UPDATE `user` SET `name`=?, `email`=?, `phonenumber`=?  WHERE`id`=?";
+		boolean f = false;
+		
+		try {
+			PreparedStatement statement = con.prepareStatement(sql);
+			statement.setString(1, us.getName());
+			statement.setString(2, us.getEmail());
+			statement.setString(3, us.getPhoneNumber());
+			statement.setInt(4,us.getId());
+			
+			int i = statement.executeUpdate();
+			
+			if(i==1) {
+				f=true;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return f;
+	}
+	 public boolean checkUser(String email) {
+		 String sql = "SELECt* FROM `user` WHERE `email`=?";
+			boolean f = true;
+			
+			try {
+				
+				PreparedStatement statement = con.prepareStatement(sql);
+				statement.setString(1, email);
+				
+				ResultSet rs = statement.executeQuery();
+				while (rs.next()) {
+					f= false;
+					
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			
+			return f;
+		}
+	}
 	
 
-}
+

@@ -27,7 +27,7 @@ public class BooksAdd extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String bookName = req.getParameter("bookname");
 		String author = req.getParameter("authorname");
-		Double price = Double.parseDouble(req.getParameter("price"));
+		String price = req.getParameter("price");
 		String categories = req.getParameter("booktype");
 		String status = req.getParameter("bookStatus");
 		Part part = req.getPart("bookimg");
